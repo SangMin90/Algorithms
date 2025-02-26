@@ -4,7 +4,6 @@ import java.util.LinkedList;
 import java.util.NoSuchElementException;
 import java.util.Objects;
 import java.util.Queue;
-import java.util.stream.IntStream;
 
 public class MinNumberFinder {
     public int[] solution(int n, int l, int[] numbers) {
