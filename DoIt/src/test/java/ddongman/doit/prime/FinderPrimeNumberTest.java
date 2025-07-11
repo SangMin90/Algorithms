@@ -24,4 +24,14 @@ class FinderPrimeNumberTest {
 
         assertThat(result).isEqualTo(new int[]{3, 5, 7, 11, 13});
     }
+
+    @Test
+    void case2() {
+        int m = 3;
+        int n = 16;
+
+        int[] result = sut.solution2(m, n);
+
+        assertThat(result).isEqualTo(new int[]{3, 5, 7, 11, 13});
+    }
 }
