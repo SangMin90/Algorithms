@@ -1,3 +1,5 @@
+package ddongman.algorithms.baekjoon.bfs;
+
 import java.util.*;
 
 public class NumberOfConnectedComponent {

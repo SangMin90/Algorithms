@@ -1,3 +1,5 @@
+package ddongman.algorithms.programmers.level1;
+
 public class RepeatWithSuBak {
     public String solution(int n) {
         String pattern = "수박";
@@ -5,10 +7,11 @@ public class RepeatWithSuBak {
         for (int i=0;i<n/2;i++) {
             sb.append(pattern);
         }
+
         if (n % 2 == 1) {
-            sb.append(String.valueOf(pattern.charAt(0)));
+            sb.append(pattern.charAt(0));
         }
-        String answer = sb.toString();
-        return answer;
+
+        return sb.toString();
     }
 }
