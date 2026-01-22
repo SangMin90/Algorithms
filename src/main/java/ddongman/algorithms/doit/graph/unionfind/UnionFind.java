@@ -35,7 +35,7 @@ public class UnionFind {
     }
 
     public YN isSameUnion(int a, int b) {
-        return root[a] == root[b] ? YES : NO;
+        return find(a) == find(b) ? YES : NO;
     }
 
     public void union(int a, int b) {

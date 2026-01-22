@@ -1,7 +1,6 @@
 package ddongman.algorithms.doit.graph.unionfind;
 
 import ddongman.algorithms.doit.graph.unionfind.UnionFind.YN;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -31,6 +30,26 @@ class UnionFindTest {
                 {0, 4, 2},
                 {0, 1, 1},
                 {1, 1, 1},
+        };
+
+        YN[] result = sut.solution(n, m, operations);
+
+        assertThat(result).isEqualTo(new YN[]{NO, NO, YES});
+    }
+
+    @Test
+    void case2() {
+        int n = 7;
+        int m = 8;
+        int[][] operations = new int[][]{
+                {0, 1, 3},
+                {1, 1, 7},
+                {0, 7, 6},
+                {1, 7, 1},
+                {0, 3, 7},
+                {0, 4, 2},
+                {0, 1, 1},
+                {1, 1, 3},
         };
 
         YN[] result = sut.solution(n, m, operations);
