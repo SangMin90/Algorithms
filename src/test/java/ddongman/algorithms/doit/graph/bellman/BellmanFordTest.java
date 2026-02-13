@@ -26,9 +26,9 @@ class BellmanFordTest {
         };
         int start = 1;
 
-        int[] result = sut.solution(V, E, start, graph);
+        long[] result = sut.solution(V, E, start, graph);
 
-        assertThat(result).isEqualTo(new int[]{4, 3});
+        assertThat(result).isEqualTo(new long[]{4, 3});
     }
 
     @Test
@@ -44,9 +44,9 @@ class BellmanFordTest {
 
         int start = 1;
 
-        int[] result = sut.solution(V, E, start, graph);
+        long[] result = sut.solution(V, E, start, graph);
 
-        assertThat(result).isEqualTo(new int[]{-1});
+        assertThat(result).isEqualTo(new long[]{-1});
     }
 
     @Test
@@ -60,8 +60,8 @@ class BellmanFordTest {
 
         int start = 1;
 
-        int[] result = sut.solution(V, E, start, graph);
+        long[] result = sut.solution(V, E, start, graph);
 
-        assertThat(result).isEqualTo(new int[]{3, -1});
+        assertThat(result).isEqualTo(new long[]{3, -1});
     }
 }
