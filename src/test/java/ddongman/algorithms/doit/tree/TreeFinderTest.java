@@ -1,6 +1,5 @@
-package ddongman.algorithms.doit.graph.tree;
+package ddongman.algorithms.doit.tree;
 
-import ddongman.algorithms.doit.tree.TreeFinder;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

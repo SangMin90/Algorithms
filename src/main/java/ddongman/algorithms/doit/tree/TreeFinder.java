@@ -1,4 +1,4 @@
-package ddongman.algorithms.doit.graph.tree;
+package ddongman.algorithms.doit.tree;
 
 import java.util.*;
 
