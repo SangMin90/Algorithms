@@ -29,4 +29,15 @@ class BinomialCoefficientTest {
 
         assertThat(result).isEqualTo(1);
     }
+
+    @Test
+    void case3() {
+        int N = 1000;
+        int K = 547;
+        sut = new BinomialCoefficient(N);
+
+        int result = sut.combinationMod(N, K, 10007);
+
+        assertThat(result).isEqualTo(4750);
+    }
 }
