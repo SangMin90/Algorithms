@@ -1,9 +1,9 @@
 package ddongman.algorithms.etc.past;
 
+import ddongman.algorithms.etc.past.domain.Item;
 import ddongman.algorithms.etc.past.knapsack.MultipleKnapsack;
 import org.junit.jupiter.api.Test;
 
-import static ddongman.algorithms.etc.past.knapsack.MultipleKnapsack.*;
 import static org.assertj.core.api.Assertions.*;
 
 class MultipleKnapsackTest {
@@ -48,7 +48,6 @@ class MultipleKnapsackTest {
                 new Item(3, 3),
                 new Item(4, 3),
                 new Item(5, 4),
-
         };
         sut = new MultipleKnapsack(items, K, M);
 

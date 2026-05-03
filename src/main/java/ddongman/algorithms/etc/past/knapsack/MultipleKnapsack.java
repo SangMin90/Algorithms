@@ -1,6 +1,10 @@
 package ddongman.algorithms.etc.past.knapsack;
 
+import ddongman.algorithms.etc.past.domain.Item;
+
 import java.util.Arrays;
+
+import static ddongman.algorithms.constant.Constant.EPSILON;
 
 public class MultipleKnapsack {
 
@@ -10,8 +14,6 @@ public class MultipleKnapsack {
     private final Item[] items;
 
     private int best;
-
-    private final static double epsilon = 1e-10;
 
     public MultipleKnapsack(Item[] items, int K, int M) {
 
@@ -50,10 +52,10 @@ public class MultipleKnapsack {
 
         for (int i = 0; i < K; i++) {
 
-            if (knapsacks[i] >= item.weight) {
-                knapsacks[i] -= item.weight;
-                dfs(index + 1, knapsacks, currentValue + item.value);
-                knapsacks[i] += item.weight;
+            if (knapsacks[i] >= item.getWeight()) {
+                knapsacks[i] -= item.getWeight();
+                dfs(index + 1, knapsacks, currentValue + item.getValue());
+                knapsacks[i] += item.getWeight();
             }
         }
 
@@ -62,7 +64,7 @@ public class MultipleKnapsack {
 
     private boolean isGreaterThanBest(double bound) {
 
-        return bound > (double) best + epsilon;
+        return bound > (double) best + EPSILON;
     }
 
     private double fractionalBound(int index, int[] knapsacks, int currentValue) {
@@ -77,38 +79,15 @@ public class MultipleKnapsack {
         for (int i = index; i < N; i++) {
 
             Item item = items[i];
-            if (remain < item.weight) {
-                upperBound += item.value * ((double) remain / item.weight);
+            if (remain < item.getWeight()) {
+                upperBound += item.getValue() * ((double) remain / item.getWeight());
                 break;
             } else {
-                upperBound += item.value;
-                remain -= item.weight;
+                upperBound += item.getValue();
+                remain -= item.getWeight();
             }
         }
 
         return upperBound;
-    }
-
-    static class Item implements Comparable<Item> {
-
-        private final int weight;
-        private final int value;
-        private final double rate;
-
-        public Item(int weight, int value) {
-            this.weight = weight;
-            this.value = value;
-            this.rate = (double) value / weight;
-        }
-
-        @Override
-        public int compareTo(Item other) {
-
-            if (Math.abs(this.rate - other.rate) < epsilon) {
-                return 0;
-            }
-
-            return this.rate > other.rate ? -1 : 1;
-        }
     }
 }
