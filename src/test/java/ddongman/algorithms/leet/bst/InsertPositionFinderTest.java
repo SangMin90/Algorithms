@@ -1,4 +1,4 @@
-package ddongman.algorithms.leet.binarySearch;
+package ddongman.algorithms.leet.bst;
 
 import static org.assertj.core.api.Assertions.*;
 

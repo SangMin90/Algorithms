@@ -1,4 +1,4 @@
-package ddongman.algorithms.leet.binarySearch;
+package ddongman.algorithms.leet.bst;
 
 public class InsertPositionFinder {
 
